@@ -9,7 +9,8 @@ class CheesesController < ApplicationController
   # GET /cheeses/:id
   def show
     cheese = Cheese.find_by(id: params[:id])
-    render json: cheese
+    render json: cheese, except: [:created_at]
   end
 
 end
+ 
